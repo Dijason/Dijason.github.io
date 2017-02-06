@@ -9,7 +9,7 @@
 window.onload = function () {
     var $canvas = document.querySelector('#canvas');
     var gesture = new Gesture($canvas, {
-        cols: 5
+        cols: 3
     });
     var result = gesture.getGestureResult();
     console.log(result)
