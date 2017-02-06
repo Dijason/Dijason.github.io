@@ -12,6 +12,10 @@ window.onload = function () {
         cols: 3
     });
     var result = gesture.getGestureResult();
+
+    window.addEventListener('touchmove', function (ev) {
+        ev.preventDefault();
+    })
     console.log(result)
 };
 
@@ -25,7 +29,7 @@ function Gesture($canvas, opts) {
     var winWidth = window.innerWidth;
     var winHeight = window.innerHeight;
     var ratio = getPixelRatio(context);
-    var radius = 10 * ratio;
+    var radius = 20 * ratio;
     var canvasWidth = winWidth * ratio;
     var canvasHeight = winHeight * ratio;
     var points = [];
