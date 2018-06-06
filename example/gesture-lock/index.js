@@ -25,23 +25,26 @@ var getPixelRatio = function (context) {
 };
 
 function Gesture($canvas, opts) {
+    var defaultConfig = {
+        lineWidth: 2,
+        strokeColor: '#000',
+        fillColor: '#fff',
+        radius: 20
+    };
+    opts = opts || {};
+    opts = Object.assign(defaultConfig, opts); //assign兼容性
     var context = $canvas.getContext('2d');
     var winWidth = window.innerWidth;
     var winHeight = window.innerHeight;
     var ratio = getPixelRatio(context);
-    var radius = 20 * ratio;
+    var radius = opts.radius * ratio;
     var canvasWidth = winWidth * ratio;
     var canvasHeight = winHeight * ratio;
     var points = [];
     var gestureResult = [];
-    var defaultConfig = {
-        lineWidth: 2,
-        strokeColor: '#000',
-        fillColor: '#fff'
-    };
 
-    opts = opts || {};
-    opts = Object.assign(defaultConfig, opts); //assign兼容性
+
+
     $canvas.style.width = winWidth + 'px';
     $canvas.style.height = winHeight + 'px';
     $canvas.width = canvasWidth;
