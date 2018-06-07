@@ -91,12 +91,12 @@
   var loadQueue = new Hilo3d.LoadQueue([{
     type: 'CubeTexture',
     images: [
-      '../assets/images/sky_01.jpg',
       '../assets/images/sky_02.jpg',
+      '../assets/images/sky_04.jpg',
       '../assets/images/sky_top.jpg',
       '../assets/images/ground.jpg',
-      '../assets/images/sky_04.jpg',
-      '../assets/images/sky_05.jpg',
+      '../assets/images/sky_01.jpg',
+      '../assets/images/sky_03.jpg',
     ]
   }]).on('complete', function () {
     var result = loadQueue.getAllContent();
