@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>Hilo3d PBR材质渲染(centurion)</title>
+  <title>centurion</title>
   <style>
     html,
     body {
@@ -87,64 +87,24 @@
   ticker.addTick(Hilo3d.Animation);
   ticker.start();
 
-  //  var loadQueue = new Hilo3d.LoadQueue([{
-  //    type: 'CubeTexture',
-  //    images: [
-  //      '//gw.alicdn.com/tfs/TB1Ss.ORpXXXXcNXVXXXXXXXXXX-2048-2048.jpg_960x960.jpg',
-  //      '//gw.alicdn.com/tfs/TB1YhUDRpXXXXcyaXXXXXXXXXXX-2048-2048.jpg_960x960.jpg',
-  //      '//gw.alicdn.com/tfs/TB1Y1MORpXXXXcpXVXXXXXXXXXX-2048-2048.jpg_960x960.jpg',
-  //      '//gw.alicdn.com/tfs/TB1ZgAqRpXXXXa0aFXXXXXXXXXX-2048-2048.jpg_960x960.jpg',
-  //      '//gw.alicdn.com/tfs/TB1IVZNRpXXXXaNXFXXXXXXXXXX-2048-2048.jpg_960x960.jpg',
-  //      '//gw.alicdn.com/tfs/TB1M3gyRpXXXXb9apXXXXXXXXXX-2048-2048.jpg_960x960.jpg'
-  //      '../assets/sky.jpeg'
-  //    ]
-  //  }]).on('complete', function () {
-  //    var result = loadQueue.getAllContent();
-  //    var skyboxMap = result[0];
-  //
-  //    var geometry = new Hilo3d.BoxGeometry();
-  //
-  //    var box = new Hilo3d.Mesh({
-  //      geometry: geometry,
-  //      material: new Hilo3d.BasicMaterial({
-  //        lightType: 'NONE',
-  //        side: Hilo3d.constants.BACK,
-  //        diffuse: skyboxMap
-  //      })
-  //    }).addTo(stage);
-  //    box.setScale(30);
-  //
-  //
-  //    var model = result[1];
-  //    model.node.setScale(3);
-  //    stage.addChild(model.node);
-  //
-  //    addClass($loading, "hide");
-  //  }).start();
+  //right,left,top,bottom,front,back
+  var loadQueue = new Hilo3d.LoadQueue([{
+    type: 'CubeTexture',
+    images: [
+      '../assets/images/sky_01.jpg',
+      '../assets/images/sky_02.jpg',
+      '../assets/images/sky_top.jpg',
+      '../assets/images/ground.jpg',
+      '../assets/images/sky_04.jpg',
+      '../assets/images/sky_05.jpg',
+    ]
+  }]).on('complete', function () {
+    var result = loadQueue.getAllContent();
+    var skyboxMap = result[0];
+console.log(skyboxMap)
 
+    var geometry = new Hilo3d.BoxGeometry();
 
-//  var loader = new Hilo3d.TextureLoader();
-//  loader.load({
-//    crossOrigin: true,
-//    src: '//gw.alicdn.com/tfs/TB1iNtERXXXXXcBaXXXXXXXXXXX-600-600.png'
-//  }).then(function (diffuse) {
-//    var material = new Hilo3d.BasicMaterial({
-//      diffuse: diffuse
-//    });
-//  });
-
-  var loader = new Hilo3d.BasicLoader();
-  loader.load({
-    src: './assets/sky.jpeg',
-    crossOrigin: true
-  }).then(img => {
-    return new Hilo3d.Texture({
-      image: img
-    });
-  }).then(skyboxMap => {
-    var geometry = new Hilo3d.SphereGeometry({
-      radius: 1
-    });
     var box = new Hilo3d.Mesh({
       geometry: geometry,
       material: new Hilo3d.BasicMaterial({
@@ -153,10 +113,26 @@
         diffuse: skyboxMap
       })
     }).addTo(stage);
-    box.setScale(10);
-    addClass($loading, "hide");
+    box.setScale(30);
 
-  });
+//
+//    var model = result[1];
+//    model.node.setScale(3);
+//    stage.addChild(model.node);
+
+    addClass($loading, "hide");
+  }).start();
+
+  //
+  //  var loader = new Hilo3d.TextureLoader();
+  //  loader.load({
+  //    crossOrigin: true,
+  //    src: '//gw.alicdn.com/tfs/TB1iNtERXXXXXcBaXXXXXXXXXXX-600-600.png'
+  //  }).then(function (diffuse) {
+  //    var material = new Hilo3d.BasicMaterial({
+  //      diffuse: diffuse
+  //    });
+  //  });
 
   new Hilo3d.DirectionalLight({
     color: new Hilo3d.Color(1, 1, 1),
