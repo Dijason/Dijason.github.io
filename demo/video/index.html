@@ -16,16 +16,37 @@
       margin: auto;
       width: 100%;
     }
+
+    @media screen and (orientation: portrait) {
+    body {
+        -webkit-transform:rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        width: 100vh;
+        height: 100vh;
+        /*去掉overflow 微信显示正常，但是浏览器有问题，竖屏时强制横屏缩小*/
+        overflow: hidden;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    body {
+        -webkit-transform:rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transform: rotate(0)
+    }
+}
   </style>
 </head>
 <body>
 <video
         id="my-player"
         class="video-js"
-        controls
         preload="auto"
         poster="../assets/logo.png"
-        autoplay="true"
+         controls="controls" autoplay="autoplay"
         data-setup='{}'>
   <source src="../assets/intro.mp4" type="video/mp4"></source>
   <p class="vjs-no-js">
@@ -36,5 +57,7 @@
     </a>
   </p>
 </video>
+<script type="text/javascript">
+</script>
 </body>
 </html>
