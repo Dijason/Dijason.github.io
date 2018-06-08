@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>test video</title>
+  <meta name="description" content="">
+  <meta name="keyword" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <style>
+    .video-js {
+      margin: auto;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<video
+        id="my-player"
+        class="video-js"
+        controls
+        preload="auto"
+        poster="../assets/ground.jpeg"
+        data-setup='{}'>
+  <source src="../assets/demo.mp4" type="video/mp4"></source>
+  <p class="vjs-no-js">
+    To view this video please enable JavaScript, and consider upgrading to a
+    web browser that
+    <a href="http://videojs.com/html5-video-support/" target="_blank">
+      supports HTML5 video
+    </a>
+  </p>
+</video>
+</body>
+</html>
