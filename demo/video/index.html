@@ -9,8 +9,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
   <meta name="format-detection" content="telephone=no"/>
-  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <!--<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">-->
+  <!--<script src="https://unpkg.com/video.js/dist/video.js"></script>-->
+  <link href="https://cdn.bootcss.com/video.js/7.0.3/video-js.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/video.js/7.0.3/video.min.js"></script>
   <style>
     .video-js {
       margin: auto;
@@ -38,6 +40,10 @@
         transform: rotate(0)
     }
 }
+
+    .vjs-poster {
+      background-size: 100%;
+    }
   </style>
 </head>
 <body>
@@ -45,7 +51,7 @@
         id="my-player"
         class="video-js"
         preload="auto"
-        poster="../assets/logo.png"
+        poster="../assets/logo.jpg"
          controls="controls" autoplay="autoplay"
         data-setup='{}'>
   <source src="../assets/intro.mp4" type="video/mp4"></source>
