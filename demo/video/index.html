@@ -17,6 +17,13 @@
     .video-js {
       margin: auto;
       width: 100%;
+      position: relative;
+    }
+
+    .video-js:before {
+      content: ' ';
+      display: block;
+      padding-bottom: 56%;
     }
 
     @media screen and (orientation: portrait) {
@@ -52,7 +59,7 @@
         class="video-js"
         preload="auto"
         poster="../assets/logo2.png"
-         controls="controls" autoplay="autoplay"
+         controls="controls"
         data-setup='{}'>
   <source src="../assets/intro.mp4" type="video/mp4"></source>
   <p class="vjs-no-js">
