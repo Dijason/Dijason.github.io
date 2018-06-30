@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
@@ -20,41 +20,21 @@
 
     .video-js {
       margin: auto;
-      /*width: 100%;*/
-    }
-
-    .video-js:before {
-      content: ' ';
-      display: block;
-      /*padding-bottom: 57.5%;*/
+      width: 100%;
     }
 
     @media screen and (orientation: portrait) {
-    body {
-        -webkit-transform:rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-        width: 100vh;
-        height: 100vh;
-        /*去掉overflow 微信显示正常，但是浏览器有问题，竖屏时强制横屏缩小*/
-        overflow: hidden;
-    }
+  
 }
 
 
     /*横屏 640x368*/
 @media screen and (orientation: landscape) {
-    body {
-        -webkit-transform:rotate(0);
-        -moz-transform: rotate(0);
-        -ms-transform: rotate(0);
-        transform: rotate(0)
-    }
+   
 }
 
     .vjs-poster {
-      background-size: auto;
+      background-size: 100%;
     }
 
   </style>
@@ -64,8 +44,9 @@
         id="my-player"
         class="video-js"
         preload="auto"
-        poster="../assets/logo2.png"
+        poster="../assets/logo.png"
          controls="controls"
+       autoplay="autoplay"
         data-setup='{}'>
   <source src="../assets/intro.mp4" type="video/mp4"></source>
   <p class="vjs-no-js">
