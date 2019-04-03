@@ -1,5 +1,7 @@
 var fs = require('fs')
-var text = fs.readFileSync('./doc').toString()
+var rightDir = fs.readFileSync('./right-dir').toString()
+var errorDir = fs.readFileSync('./error-dir').toString()
+
 // console.log(JSON.stringify(text))
 
 function parseLine(line) {
@@ -55,4 +57,6 @@ function dirParser(text) {
   return result
 }
 
-console.log(JSON.stringify(dirParser(text)))
+console.log(dirParser(rightDir))
+
+console.log(dirParser(errorDir))
