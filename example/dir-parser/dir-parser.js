@@ -3,9 +3,13 @@ var rightDir = fs.readFileSync('./right-dir').toString()
 var errorDir = fs.readFileSync('./error-dir').toString()
 
 // console.log(JSON.stringify(text))
+const tab2space = 4
 
 function parseLine(line) {
-  var reg = /^(\s*)([^\s]+)$/
+  line = line.replace(/^([\s\t])*/g, function (match) {
+    return match.replace(/\t/g, tab2space)
+  })
+  var reg = /^(\s*)([^\s]+)/
   var $$ = reg.exec(line)
   if (!$$[1]) {
     return {
